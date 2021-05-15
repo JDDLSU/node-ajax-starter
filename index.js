@@ -60,11 +60,23 @@ app.get('/', function(req, res) {
 
 app.get('/getStudents', function(req, res) {
   // TODO
+  res.status(200).send(students);
 });
 
 app.post('/addStudent', function(req, res) {
   // TODO
-})
+
+  var student = 
+  {
+    name: req.body.name,
+    id: req.body.id,
+    img: "img/" + req.body.gender + ".png"
+  };
+  
+  students.push(student);
+  
+  res.status(200).send(student);
+});
 
 /**
   To be able to render images, css and JavaScript files, it's best to host the static files
